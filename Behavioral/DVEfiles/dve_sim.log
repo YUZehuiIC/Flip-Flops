@@ -1,0 +1,37 @@
+15:53:30    16 -->                                                             [tcl] ucliGUI::connect -toolargs -ucligui -toolexe simv -pid 17477 -toolin /tmp/vcs_20201005075325_17476_msc30y20..stdin -toolout /tmp/vcs_20201005075325_17476_msc30y20..stdout  
+15:53:30    17 -->                                                                 [tcl] set ucliGUI::state
+15:53:30    18 -->                                                                     [tcl] gui_update_simulator_buttons
+15:53:31    19 -->                                                                         [tcl] set ucliGUI::state
+15:53:31    20 -->                                                                             [tcl] ucliCore::getToolPID
+15:53:31    21 -->                                                                                 [tcl] synopsys::env hasTB
+15:53:31    22 -->                                                                                     [tcl] trigger_hier_stack_context_switch 0
+15:53:31    23 -->                                                                                         [tcl] synUtils::setDVEInitPhase 1
+15:53:31    24 -->                                                                                             [tcl] gui_get_env SIMSETUP::SIMVPD
+15:53:31    25 --> ...  [tcl] synopsys::dump -type VPD -file /home1/msc30y20/Desktop/Module4_FlipFlops/Behavioral/inter.vpd -locking
+15:53:31    26 --> ...      [tcl] synopsys::dump -autoflush on -fid VPD0
+15:53:31    27 --> ...          [tcl] set ::dve_fid VPD0
+15:53:31    28 --> ...              [tcl] synUtils::setDVEInitPhase 0
+15:53:31    29 --> ...                  [tcl] ucliCore::getToolPID
+15:53:31    30 --> ...                      [tcl] synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpFXf8mu
+15:53:31    31 --> ...                          [tcl] synUtils::sendTool -active {_icl_start_rpc -version "I-2014.03-SP1" -sync_file /tmp/vcs_dve_rpc.msc30y20.17477}
+15:53:31    32 --> ...                              [tcl] synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.msc30y20.17477}
+15:53:32    33 --> ...                                  [tcl] dveMisc::vbusExpand StateMachine_tb
+15:53:32    34 --> ...                                      [tcl] config endofsim noexit
+15:53:32    35 --> ...                                          [tcl] config onfail enable all
+15:53:32    36 --> ...                                              [tcl] config syscaddplainmembers
+15:53:32    37 --> ...                                                  [tcl] config syscaddsourcenames
+15:53:32    38 --> ...                                                      [tcl] config syscaddstructtypes
+15:53:32    39 --> ...                                                          [tcl] synopsys::listing -disable
+15:54:08    40 --> ...                                                              [tcl] ucliGUI::vpdAddHierarchy -scope StateMachine_tb -depth 1 -file /home1/msc30y20/Desktop/Module4_FlipFlops/Behavioral/inter.vpd; synopsys::dump -flush VPD0
+15:54:08    41 --> ...                                                                  [tcl] synopsys::dump -add {StateMachine_tb.N} -aggregates  -fid VPD0
+15:54:08    42 --> ...                                                                      [tcl] synopsys::dump -add {StateMachine_tb.REG_DATA} -aggregates  -fid VPD0
+15:54:12    43 --> ...                                                                          [tcl] if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+15:54:12    44 --> ...                                                                              [tcl] synopsys::finish
+15:54:12    45 --> ...                                                                                  [tcl] set ucliGUI::state
+15:54:12    46 --> ...                                                                                      [tcl] set ucliGUI::state
+15:54:12    47 --> ...                                                                                          [tcl] catch {senv activeDomain} dveMisc::result 
+15:54:12    48 --> ...                                                                                              [tcl] set dveMisc::result
+15:54:12    49 --> ...                                                                                                  [tcl] gui_update_simulator_buttons
+15:54:12    50 --> ...  [tcl] catch {senv activeDomain} dveMisc::result 
+15:54:12    51 --> ...      [tcl] set dveMisc::result
+15:54:12    52 --> ...          [tcl] ucli_exit

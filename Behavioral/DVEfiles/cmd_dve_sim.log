@@ -1,0 +1,28 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /home1/msc30y20/Desktop/Module4_FlipFlops/Behavioral/inter.vpd -locking
+synopsys::dump -autoflush on -fid VPD0
+set ::dve_fid VPD0
+synUtils::setDVEInitPhase 0
+ucliCore::getToolPID
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpFXf8mu
+synUtils::sendTool -active {_icl_start_rpc -version "I-2014.03-SP1" -sync_file /tmp/vcs_dve_rpc.msc30y20.17477}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.msc30y20.17477}
+config endofsim noexit
+config onfail enable all
+config syscaddplainmembers
+config syscaddsourcenames
+config syscaddstructtypes
+synopsys::listing -disable
+ucliGUI::vpdAddHierarchy -scope StateMachine_tb -depth 1 -file /home1/msc30y20/Desktop/Module4_FlipFlops/Behavioral/inter.vpd; synopsys::dump -flush VPD0
+synopsys::dump -add {StateMachine_tb.N} -aggregates  -fid VPD0
+synopsys::dump -add {StateMachine_tb.REG_DATA} -aggregates  -fid VPD0
+if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+synopsys::finish
+set ucliGUI::state
+set ucliGUI::state
+ucli_exit
